@@ -6,9 +6,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100|Lato:100,300,400|Rubik:700" rel="stylesheet">
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <title>DREAM ARCHIVE</title>
+  <title >DREAM ARCHIVE</title>
+  <link rel="icon" type="image/png" href="/assets/owlLogo.png"/>
+
 
 </head>
 
@@ -19,7 +22,19 @@
     <nav style="background-color:#0b0b0c" class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container">
 
-        <a id="home_button" class="e titleFont" href="#">Dream Archive</a>
+
+
+        <a id="home_buttonOwl" class="e titleFont" href="#"> <!--<h2>Dream Archive</h2>--> <img src="./assets/owlLogo.png" height="48" ></a>
+
+          <a id="home_button" class="e titleFont" href="#"> <!--<h2>Dream Archive</h2>--> <img src="./assets/iconsDA_titletest12.png" height="44" ></a>
+
+
+
+
+
+
+
+
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -28,6 +43,9 @@
             <!-- <li class="nav-item active">
                 <a class="nav-link" href="#">Dream Archive <span class="sr-only">(current)</span></a>
               </li> -->
+           </div>
+
+
             <li class="nav-item titleFont">
               <a id="archive_page_button" class="nav-link" href="#">My Archive</a>
             </li>
@@ -39,18 +57,20 @@
             </li>
           </ul>
 
+
+
+
           <div>
             <form class="form-inline">
                   <button id="signin_button" class="btn ml-2 btn-outline-info text-info bodyFont" type="submit">Sign in</button>
-                </div>
-              </div>
 
+              </div>
               <div class="ml-2">
             </form>
-            </div>
 
           </div>
-        </div>
+
+     </div>
     </nav>
   </header>
 
@@ -61,7 +81,9 @@
     <!-- login section -->
     <section id="login_page" class="container mt-5">
       <form class="form-signin">
-        <h1 class="display-5 mb-3 font-weight-bold text-light text-center titleFont">Dream Archive</h1>
+        <h1 class="display-5 mb-3 font-weight-bold text-light text-center titleFont"></h1>
+          <a id="DA_title_SignInPage" class="e titleFont" href="#"> <!--<h2>Dream Archive</h2>--> <img src="./assets/iconsDA_titletest12.png" height="46"  ><br> <br> </a>
+
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
         <label for="inputPassword" class="sr-only">Password</label>
@@ -72,17 +94,27 @@
           </label>
         </div>
         <button class="btn btn-md btn-outline-info btn-block bodyFont" type="submit">Sign Up</button>
+
       </form>
+
+      <p id="intro"> <br><br>This is a private space were you can<br><br>
+    have an archive of your dreams,<br><br>
+    keep track of them over time<br><br>
+    and make creative analysis.   </p>
+
+
+
     </section>
 
     <!-- Archive section -->
 
     <section id="archive_page" class="container">
       <div id="archive_page_content"></div>
-        <div class="row">
-          <div class="col-3">
 
-   <div>
+
+   <div id="searchDreamBox">
+     <!-- <a id="addNewDream_button" class="e titleFont" href="#"> <h5> + Add New Dream </h5></a>-->
+
         <form class="form-inline">
           <div class="input-group">
             <input style="background-color:#0b0b0c;" class="form-control  bodyFont" type="text" placeholder="Search" aria-label="Search">
@@ -152,7 +184,11 @@
           <button class="btn btn-secondary" style="width:100px"  name="options" id="recordButton"> Record</button>
           <button class="btn btn-light" style="width:100px"  name="options" id="drawButton"> Draw</button>
           <button class="btn btn-info " style="width:100px"  name="options" id="saveButton"> Save</button>
+          <img src="./assets/pencil_icon.png" height="58">
+          <img src="./assets/addImageIcon.png" height="58">
         </div>
+
+
 
     </section>
 
@@ -163,9 +199,153 @@
         <div class="mt-4 btn-group" data-toggle="buttons">
           <button class="btn btn-secondary" style="width:150px"  name="options" id="poetryButton"> Poetry Generator</button>
           <button class="btn btn-light" style="width:150px"  name="options" id="shareButton"> Share</button>
+
+          <img src="./assets/poetryGenerator_icon.png" height="58">
+          <img src="./assets/share_bird_icon.png" height="58"  >
+
+  </section>
+
+
+  <!-- Gallery Page -->
+
+  <section id="gallery_page" class="container">
+    <div class="row">
+
+      <div id="searchGalleryBox">
+        <!-- <a id="addNewDream_button" class="e titleFont" href="#"> <h5> + Add New Dream </h5></a>-->
+          <div class="col-sm-3">
+           <form class="form-inline">
+             <div class="input-group">
+               <input style="background-color:#0b0b0c;" class="form-control  bodyFont" type="text" placeholder="Search" aria-label="Search">
+               <div class="input-group-append">
+                 <button class="btn btn-info text-dark bodyFont" type="submit">Go</button>
+               </div>
+             </div>
+
+             <div class="ml-2">
+           </form>
+          </div>
+        </div>
+     </div>
+
+
+
+
+
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <img src="./assets/brunatruffa_1171972_257363917744652_113536103_n.jpg" alt="...">
+          <div class="caption">
+            <h3>The dinner</h3>
+            <p>I was in a meeting with some communist friends...</p>
+            <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
+          </div>
         </div>
       </div>
+
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <img src="./assets/brunatruffa_1171972_257363917744652_113536103_n.jpg" alt="...">
+          <div class="caption">
+            <h3>The dinner</h3>
+            <p>I was in a meeting with some communist friends...</p>
+            <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <img src="./assets/brunatruffa_1171972_257363917744652_113536103_n.jpg" alt="...">
+          <div class="caption">
+            <h3>The dinner</h3>
+            <p>I was in a meeting with some communist friends...</p>
+            <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <img src="" alt="...">
+          <div class="caption">
+            <h3></h3>
+            <p></p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <img src="./assets/brunatruffa_1171972_257363917744652_113536103_n.jpg" alt="...">
+          <div class="caption">
+            <h3>The dinner</h3>
+            <p>I was in a meeting with some communist friends...</p>
+            <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <img src="./assets/brunatruffa_1171972_257363917744652_113536103_n.jpg" alt="...">
+          <div class="caption">
+            <h3>The dinner</h3>
+            <p>I was in a meeting with some communist friends...</p>
+            <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <img src="./assets/brunatruffa_1171972_257363917744652_113536103_n.jpg" alt="...">
+          <div class="caption">
+            <h3>The dinner</h3>
+            <p>I was in a meeting with some communist friends...</p>
+            <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <img src="" alt="...">
+          <div class="caption">
+            <h3></h3>
+            <p></p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   </main>
@@ -208,6 +388,7 @@
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js"></script> -->
   <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>

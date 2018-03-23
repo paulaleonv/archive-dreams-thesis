@@ -14,8 +14,17 @@ body {
   justify-content: center; */
   padding-top: 54px;
   background-color:#0b0b0c;
+  font-family: 'Josefin Sans', sans-serif;
   /* overflow: auto; */
 }
+
+#intro{
+  margin-top: 3.5em
+  text-align: center;
+  font-size: 0.1.2em;
+  color:#8ad8d7;
+}
+
 
 @media (min-width: 992px) {
   body {
@@ -30,6 +39,31 @@ body {
 
 a {
   color:#8ad8d7;
+}
+
+#searchDreamBox {
+position:fixed;
+right:50px;
+top:100px;
+
+}
+
+#searchGalleryBox{
+position:fixed;
+right:50px;
+top:100px;
+margin-bottom: 3%;
+
+}
+
+#addNewDream_button {
+margin-bottom: 3%;
+
+}
+
+.thumbnail img {
+    height:200px;
+    width:100%;
 }
 
 .custom-card {
@@ -48,7 +82,7 @@ a {
 }
 
 .bodyFont {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
 }
 
@@ -65,12 +99,13 @@ a {
 
 .form-signin .form-control {
   background-color:#0b0b0c;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   position: relative;
   /* box-sizing: border-box; */
   height: auto;
   padding: 10px;
   font-size: 0.75em;
+  color:#8ad8d7;
 }
 
 .form-signin .form-control:focus {

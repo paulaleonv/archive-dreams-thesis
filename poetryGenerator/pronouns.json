@@ -1,0 +1,12 @@
+{  "pronouns": {
+"1stPersonSingular": ["I",	"me",	"my",	"mine",	"myself"],
+"2ndPersonSingular": ["you",	"your",	"yours", "yourself"],
+"3stPersonSingularMale":["he",	"him",	"his",	"himself"],
+"3stPersonSingularFemale":["she",	"her",	"her",	"hers",	"herself"],
+"3stPersonSingularNeutral":["it",	"it",	"its", "itself"],
+"1stPersonPlural":["we",	"us",	"our", "ours", "ourselves"],
+"2ndPersonPlural":["you",	"your",	"yours", "ourselves"],
+"3stPersonSneutral": ["they",	"them",	"their", "theirs","themselves"]
+  }
+
+}

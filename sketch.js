@@ -37,6 +37,18 @@ $(document).ready(function() {
 
 
   })
+
+  $("#gallery_page_button").click(function() {
+    $("section").not("#gallery_page").hide();
+    $("#gallery_page").show();
+
+    //gotData();
+
+    // hide expanded navbar
+    //$('.navbar-collapse').collapse('hide');
+  })
+
+
 });
 
 
@@ -141,6 +153,83 @@ function readDream(title, body, tag, date) {
   $("#read_page").show();
 
 }
+
+
+
+
+//function searcherInput jquery
+
+// (function ($) {
+// 	  jQuery.expr[':'].Contains = function(a,i,m){
+// 		  return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+// 	  };
+//
+// 	  function listFilter(header, list) {
+//     //create a var with all the words of the dreams
+//     var list ="var to create"
+// 		var form = $("<form>").attr({"class":"filterform","action":"#"}),
+// 			input = $("<input>").attr({"class":"filterinput","type":"text"});
+// 		$(form).append(input).appendTo(header);
+//
+// 		$(input)
+// 		  .change( function () {
+// 			var filter = $(this).val();
+// 			if(filter) {
+// 			  $(list).find("a:not(:Contains(" + filter + "))").parent().slideUp();
+// 			  $(list).find("a:Contains(" + filter + ")").parent().slideDown();
+// 			} else {
+// 			  $(list).find("li").slideDown();
+// 			}
+// 			return false;
+// 		  })
+// 		.keyup( function () {
+// 			$(this).change();
+// 		});
+// 	  }
+//
+// 	  $(function () {
+// 		listFilter($("#header"), $("#list"));
+// 	  });
+// 	}(jQuery));
+
+  //end of Jquery function
+
+
+
+
+
+// function mySearcher()    {
+//
+//   //storing the input Word from user
+//   let filteredDreams =[];
+//   let myWord = searcherInput.value();
+//   console.log(myWord);
+//
+//   for (let i=0; i<keys.length; i++) {
+//   let k= keys[i];
+//   let dream=archivedDreams[k].dream;
+//   let title=archivedDreams[k].title;
+//
+//
+//   // console.log(dream);
+//   if (dream && dream.includes(myWord) ) {
+//     //regular expresion or
+//     // dream.includes("word".value)
+//     filteredDreams.push(dream);
+//     console.log(dream);
+//     showFilteredDream(filteredDreams);
+//     archive_Complete_List = document.getElementById("listOfDreams")
+//     archive_Complete_List.style.display = "none";
+//
+//
+//     }
+//   }
+//
+// }
+//   //end of mySearcherfunction
+//
+
+
 //
 //
 // //library to work with strings
@@ -479,36 +568,7 @@ function readDream(title, body, tag, date) {
 // // console.log(highest);
 // // }
 //
-// function mySearcher()    {
-//
-//   //storing the input Word from user
-//   let filteredDreams =[];
-//   let myWord = searcherInput.value();
-//   console.log(myWord);
-//
-//   for (let i=0; i<keys.length; i++) {
-//   let k= keys[i];
-//   let dream=archivedDreams[k].dream;
-//   let title=archivedDreams[k].title;
-//
-//
-//   // console.log(dream);
-//   if (dream && dream.includes(myWord) ) {
-//     //regular expresion or
-//     // dream.includes("word".value)
-//     filteredDreams.push(dream);
-//     console.log(dream);
-//     showFilteredDream(filteredDreams);
-//     archive_Complete_List = document.getElementById("listOfDreams")
-//     archive_Complete_List.style.display = "none";
-//
-//
-//     }
-//   }
-//
-// }
-//   //end of mySearcherfunction
-//
+
 //
 //   function showFilteredDream(dreams)
 //   {
