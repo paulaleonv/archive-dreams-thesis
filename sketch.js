@@ -1,7 +1,7 @@
 // Menu selection
 $(document).ready(function() {
 
-  $("section").not( "#login_page" ).hide();
+  $("section").not("#login_page").hide();
   // $("section").not( "#archive_page" ).hide();
   // $("section").not("#record_page").hide();
   // $("section").not("#read_page").hide();
@@ -82,31 +82,68 @@ function gotData() {
   // clear before loading the page
   $("#archive_page_content").children().remove();
 
+
   ref.once('value').then(function(snapshot) {
     let value = snapshot.val();
     let key = Object.keys(snapshot.val());
 
+    let tagList = [];
     // Add card element
     key.forEach(function(d) {
       let content = value[d];
-      console.log(content)
+      // console.log(content)
       let dt = new Date(content.date);
       let dt_final = (dt.getMonth() + 1) + "/" + dt.getDate() + "/" + dt.getFullYear();
       let body = content.body.replace(/^(.{130}[^\s]*).*/, "$1") // show only 130 letters
       let title = content.title;
       let tag = content.tag;
 
-      $("#archive_page_content").prepend($('<div/>', {'class': 'row'})
-      .append($('<div/>', {'class': 'col-lg-7 colum-sizing'})
-      .append($('<div/>', {'class': 'card h-100 custom-card'})
-      .append($('<div/>', {'class': 'card-body'})
-      .append([
-        $('<h4/>', {'class': 'card-title titleFont'}).append($('<a/>').text(title).attr("href", "#").click(function() {readDream(title,body,tag,dt_final);})),
-        $('<blockquote/>', {'class': 'blockquote'}).append($('<footer/>', {'class':'blockquote-footer'}).text(dt_final)),
-        $('<p/>', {'class': 'card-text bodyFont'}).text(body).css("color", "#afafaf")]
-      )))))
+
+      // put adding tag function here
+      for (let i = 0; i < tag.length; i++) {
+        tagList.push(tag[i])
+        // console.log(tag[i])
+      }
+
+      $("#archive_page_content").prepend($('<div/>', {
+          'class': 'row'
+        })
+        .append($('<div/>', {
+            'class': 'col-lg-7 colum-sizing'
+          })
+          .append($('<div/>', {
+              'class': 'card h-100 custom-card'
+            })
+            .append($('<div/>', {
+                'class': 'card-body'
+              })
+              .append([
+                $('<h4/>', {
+                  'class': 'card-title titleFont'
+                }).append($('<a/>').text(title).attr("href", "#").click(function() {
+                  readDream(title, body, tag, dt_final);
+                })),
+                $('<blockquote/>', {
+                  'class': 'blockquote'
+                }).append($('<footer/>', {
+                  'class': 'blockquote-footer'
+                }).text(dt_final)),
+                $('<p/>', {
+                  'class': 'card-text bodyFont'
+                }).text(body).css("color", "#afafaf")
+              ])))))
     });
+
+    //  Show all tags
+    $("#tagList").children().remove();
+    tagList.forEach(function(d) {
+        $("#tagList").append($('<p>', {
+          'class': 'eachTag'
+        }).text(d))
+      })
+
   });
+
 }
 
 
@@ -124,7 +161,7 @@ function saveDreams() {
 
 
 function readDream(title, body, tag, date) {
-//
+  //
 
   // clear before loading the page
   $("#read_title").remove();
@@ -134,25 +171,127 @@ function readDream(title, body, tag, date) {
 
 
   $("#read_page")
-    .prepend($('<div/>', {'class': 'row justify-content-center'})
-    .append($('<div/>', {'class': 'mt-2 w-75','id':'read_tag'})))
-    .prepend($('<div/>', {'class': 'row justify-content-center'})
-    .append($('<div/>', {'class': 'mt-2 w-75 read_tag'})))
-    .prepend($('<div/>', {'class': 'row mt-2 justify-content-center'})
-    .append($('<p/>', {'class': 'mt-2 w-75 bodyFont', 'id':'read_body'}).text(body)))
-    .prepend($('<div/>', {'class': 'row mt-2 justify-content-center'})
-    .append($('<p/>', {'class': 'mt-2 w-75 bodyFont', 'id':'read_date'}).text(date)))
-    .prepend($('<div/>', {'class': 'row justify-content-center'})
-    .append($('<h1/>', {'class': 'mt-4 w-75 titleFont','id':"read_title"}).text(title)))
+    .prepend($('<div/>', {
+        'class': 'row justify-content-center'
+      })
+      .append($('<div/>', {
+        'class': 'mt-2 w-75',
+        'id': 'read_tag'
+      })))
+    .prepend($('<div/>', {
+        'class': 'row justify-content-center'
+      })
+      .append($('<div/>', {
+        'class': 'mt-2 w-75 read_tag'
+      })))
+    .prepend($('<div/>', {
+        'class': 'row mt-2 justify-content-center'
+      })
+      .append($('<p/>', {
+        'class': 'mt-2 w-75 bodyFont',
+        'id': 'read_body'
+      }).text(body)))
+    .prepend($('<div/>', {
+        'class': 'row mt-2 justify-content-center'
+      })
+      .append($('<p/>', {
+        'class': 'mt-2 w-75 bodyFont',
+        'id': 'read_date'
+      }).text(date)))
+    .prepend($('<div/>', {
+        'class': 'row justify-content-center'
+      })
+      .append($('<h1/>', {
+        'class': 'mt-4 w-75 titleFont',
+        'id': "read_title"
+      }).text(title)))
 
   tag.forEach(function(d) {
-  $("#read_tag").append($('<p/>', {'class': 'mr-1 bodyFont d-inline-block'}).text(d))
+    $("#read_tag").append($('<p/>', {
+      'class': 'mr-1 bodyFont d-inline-block'
+    }).text(d))
   })
 
   $("section").not("#read_page").hide();
   $("#read_page").show();
 
 }
+
+
+document.getElementById("searchButtonArchive").addEventListener("click", function() {
+  // clear before loading the page
+  $("#archive_page_content").children().remove();
+
+  var searchArchiveValue = document.getElementById("searchInputArchive").value
+  // console.log(searchArchiveValue)
+
+  ref.once('value').then(function(snapshot) {
+    let value = snapshot.val();
+    let key = Object.keys(snapshot.val());
+
+    let tagList=[];
+    // Add card element
+    key.forEach(function(d) {
+      let content = value[d];
+      // console.log(content)
+
+
+              let dt = new Date(content.date);
+              let dt_final = (dt.getMonth() + 1) + "/" + dt.getDate() + "/" + dt.getFullYear();
+              let body = content.body.replace(/^(.{130}[^\s]*).*/, "$1") // show only 130 letters
+              let title = content.title;
+              let tag = content.tag;
+
+
+              // put adding tag function here
+              for (let i = 0; i < tag.length; i++) {
+                tagList.push(tag[i])
+                // console.log(tag[i])
+              }
+
+      if (content.body.indexOf(searchArchiveValue) != -1) {
+
+    
+
+        $("#archive_page_content").prepend($('<div/>', {
+            'class': 'row'
+          })
+          .append($('<div/>', {
+              'class': 'col-lg-7 colum-sizing'
+            })
+            .append($('<div/>', {
+                'class': 'card h-100 custom-card'
+              })
+              .append($('<div/>', {
+                  'class': 'card-body'
+                })
+                .append([
+                  $('<h4/>', {
+                    'class': 'card-title titleFont'
+                  }).append($('<a/>').text(title).attr("href", "#").click(function() {
+                    readDream(title, body, tag, dt_final);
+                  })),
+                  $('<blockquote/>', {
+                    'class': 'blockquote'
+                  }).append($('<footer/>', {
+                    'class': 'blockquote-footer'
+                  }).text(dt_final)),
+                  $('<p/>', {
+                    'class': 'card-text bodyFont'
+                  }).text(body).css("color", "#afafaf")
+                ])))))
+      }
+    });
+    //  Show all tags
+    $("#tagList").children().remove();
+    tagList.forEach(function(d) {
+        $("#tagList").append($('<p>', {
+          'class': 'eachTag'
+        }).text(d))
+      })
+  });
+
+})
 
 
 
@@ -192,7 +331,7 @@ function readDream(title, body, tag, date) {
 // 	  });
 // 	}(jQuery));
 
-  //end of Jquery function
+//end of Jquery function
 
 
 
