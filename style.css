@@ -14,26 +14,12 @@ body {
   justify-content: center; */
   padding-top: 54px;
   background-color:#0b0b0c;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  /*font-family: 'Josefin Sans', sans-serif; */
+
   /* overflow: auto; */
 }
 
-#archive_page_content, #gallery_page {
-  padding-top:5%;
-}
-
-#introParent {
-  width: 100%;
-  text-align: center;
-}
-
-#intro{
-  /* margin-left : 35%; */
-  margin-top: 3.5em
-  text-align: center;
-  font-size: 0.1.2em;
-  color:#8ad8d7;
-}
 
 
 @media (min-width: 992px) {
@@ -51,18 +37,88 @@ a {
   color:#8ad8d7;
 }
 
+#galleryTextParent {
+      padding-top:7%;
+      text-align: center;
+      color:#7c7a7a;
+
+}
+
+#introParent, #titleParent {
+  width: 100%;
+  text-align: center;
+  color:#eee6e4;
+}
+
+#intro{
+  /* margin-left : 35%; */
+  margin-top: 4.5em
+  text-align: center;
+  font-size: 1.1em;
+  color:#eee6e4;
+  letter-spacing: 3px;
+  opacity: 0.7;
+}
+
+#record_page  {
+  padding-top:5%;
+  width: 100%;
+  text-align: center;
+
+}
+
+
+.readDreamParentButtons, .poetryGeneratorParent {
+  padding-top:7%;
+  width: 100%;
+  text-align: center;
+
+}
+
+#read_page {
+  width: 100%;
+  text-align: center;
+  padding-top:7%;
+
+}
+
+#archive_page_content, #gallery_page {
+  padding-top:7%;
+}
+
+
+#rightColsSearchContent {
+  width: 25%;
+  position:fixed;
+  right:100px;
+  top:100px;
+  margin-right:20%;
+}
+
+
+
 #searchDreamBox {
+margin-top: 2%;
 position:fixed;
 right:50px;
 top:100px;
 
 }
+#tagList {
+
+  margin-top: 25%;
+  text-align: center;
+  font-size: 1em;
+  color:#7c7a7a;
+}
+
 
 #galleryImageSection{
   width : 70%;
 }
 #gallerySearchSection{
 position:fixed;
+margin-top: 2%;
 right:50px;
 top:100px;
 /* margin-bottom: 3%; */
@@ -80,7 +136,7 @@ margin-bottom: 3%;
 
 .custom-card {
   background: #0b0b0c;
-  border : solid 0.6px #eee6e4;
+  border : solid 0.5px #eee6e4;
 }
 
 .pagination {
@@ -90,11 +146,11 @@ margin-bottom: 3%;
 
 
 .titleFont {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Avenir', sans-serif;
 }
 
 .bodyFont {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Avenir', sans-serif;
   font-weight: 300;
 }
 
@@ -111,13 +167,15 @@ margin-bottom: 3%;
 
 .form-signin .form-control {
   background-color:#0b0b0c;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Avenir', sans-serif;
   position: relative;
   /* box-sizing: border-box; */
   height: auto;
   padding: 10px;
   font-size: 0.75em;
   color:#8ad8d7;
+
+
 }
 
 .form-signin .form-control:focus {
@@ -150,14 +208,14 @@ margin-bottom: 3%;
   padding-left: 10px;
   padding-top: 10px;
   background: #0b0b0c;
-  border : solid 0.2px #eee6e4;
+  border : solid 0.1px #eee6e4;
   color : #fff;
 }
 
 #record_tag {
   padding-left: 10px;
   background: #0b0b0c;
-  border : solid 0.2px #eee6e4;
+  border : solid 0.1px #eee6e4;
   color : #fff;
 }
 

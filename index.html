@@ -6,6 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100|Lato:100,300,400|Rubik:700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -20,26 +21,20 @@
   <!-- Fixed navbar -->
   <header>
     <nav style="background-color:#0b0b0c" class="navbar navbar-expand-lg navbar-dark fixed-top">
-      <div class="container">
+      <div id="dreamArchivebox" class="container">
 
 
 
         <a id="home_buttonOwl" class="e titleFont" href="#">
           <!--<h2>Dream Archive</h2>-->
-          <img src="./assets/owlLogo.png" height="48">
-        </a>
+            <!--   <img src="./assets/owlLogo.png" height="48">
+            </a> -->
+
 
         <a id="home_button" class="e titleFont" href="#">
           <!--<h2>Dream Archive</h2>-->
-          <img src="./assets/iconsDA_titletest12.png" height="44">
+          <img src="./assets/Asset1.png" height="44">
         </a>
-
-
-
-
-
-
-
 
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -90,7 +85,11 @@
         <h1 class="display-5 mb-3 font-weight-bold text-light text-center titleFont"></h1>
         <a id="DA_title_SignInPage" class="e titleFont" href="#">
           <!--<h2>Dream Archive</h2>-->
-          <img src="./assets/iconsDA_titletest12.png" height="46"><br> <br>
+            <div id="titleParent">
+          <img src="./assets/Asset1.png" height="47"><br> <br> <br>
+
+            </div>
+
         </a>
 
         <label for="inputEmail" class="sr-only">Email address</label>
@@ -107,7 +106,9 @@
       </form>
 
       <div id="introParent">
-        <p id="intro"> <br><br>This is a private space were you can<br><br> have an archive of your dreams,<br><br> keep track of them over time<br><br> and make creative analysis. </p>
+        <p id="intro"> <br><br>This is a private space were you  <br> can record an archive dreams,<br> keep track of them over time<br> and make creative analysis. </p>
+        <br><br>
+         <img src="./assets/owlLogo.png" height="48">
       </div>
 
     </section>
@@ -117,6 +118,9 @@
     <section id="archive_page" class="container">
       <div id="archive_page_content"></div>
 
+      <div id"rightColsSearchContent" class= "row">
+
+          <div class="col-3">
 
       <div id="searchDreamBox">
         <!-- <a id="addNewDream_button" class="e titleFont" href="#"> <h5> + Add New Dream </h5></a>-->
@@ -125,12 +129,14 @@
           <div class="input-group">
             <input id="searchInputArchive" style="background-color:#0b0b0c;" class="form-control  bodyFont" type="text" placeholder="Search" aria-label="Search">
             <div class="input-group-append">
-              <button id="searchButtonArchive" class="btn btn-info text-dark bodyFont" type="submit">Go</button>
+              <button id="searchButtonArchive" class="btn btn-info text-dark bodyFont" style="background-color:#0b0b0c;" type="submit">Go</button>
             </div>
-          </div>
-          <div id="tagList"></div>
+
+            </div>
         </form>
-      </div>
+
+  <div id="tagList"></div>
+  </div>
 
       </div>
 
@@ -168,18 +174,21 @@
       </ul>
 
       </div>
-    </section>
+    </div>
+  </section>
+
 
 
 
     <!-- Record/write section -->
     <section id="record_page" class="container">
+
       <div class="row justify-content-center">
-        <input id="record_title" class="mt-4 w-75 bodyFont" placeholder="Title"></input>
+          <input id="record_title" class="mt-4 w-75 bodyFont" placeholder="Title"></input>
       </div>
-      </div>
+
       <div class="row mt-2 justify-content-center">
-        <textarea id="record_body" class="mt-2 w-75 bodyFont" placeholder="What's your dream about?" style="height:60vh"></textarea>
+        <textarea id="record_body" class="mt-2 w-75 bodyFont" placeholder="What's your dream about?" style="height:50vh"></textarea>
       </div>
       <div class="row mt-2 justify-content-center">
         <input id="record_tag" class="mt-2 w-75 bodyFont" placeholder="Tag" style="height:5vh"></textarea>
@@ -199,14 +208,23 @@
 
     <!-- Read a single dream section -->
     <section id="read_page" class="container">
+
       <div class="row mt-2 justify-content-center">
 
-        <div class="mt-4 btn-group" data-toggle="buttons">
-          <button class="btn btn-secondary" style="width:150px" name="options" id="poetryButton"> Poetry Generator</button>
-          <button class="btn btn-light" style="width:150px" name="options" id="shareButton"> Share</button>
+          <div class="readDreamParentButtons">
+            <div class="mt-4 btn-group" data-toggle="buttons">
+              <button class="btn btn-secondary" style="width:150px" name="options" id="poetryButton"> Poetry Generator</button>
+              <button class="btn btn-light" style="width:150px" name="options" id="shareButton"> Share</button>
+              <img src="./assets/poetryGenerator_icon.png" height="58">
+              <img src="./assets/share_bird_icon.png" height="58">
+            </div>
+          </div>
+            <div class="poetryGeneratorParent">
+              <div class="poetryGenerator">
+                here we will have some poetry
+              </div>
 
-          <img src="./assets/poetryGenerator_icon.png" height="58">
-          <img src="./assets/share_bird_icon.png" height="58">
+            </div>
 
     </section>
 
@@ -222,7 +240,7 @@
             <div class="input-group">
               <input style="background-color:#0b0b0c;" class="form-control  bodyFont" type="text" placeholder="Search" aria-label="Search">
               <div class="input-group-append">
-                <button class="btn btn-info text-dark bodyFont" type="submit">Go</button>
+                <button class="btn btn-info text-dark bodyFont" style="background-color:#0b0b0c;" type="submit">Go</button>
               </div>
             </div>
 
@@ -234,13 +252,16 @@
 
 
       <div id="galleryImageSection" class="row">
+
         <div class="col-4">
           <div class="thumbnail">
             <img src="./assets/brunatruffa_1171972_257363917744652_113536103_n.jpg" alt="...">
+            <div id="galleryTextParent">
             <div class="caption">
-              <h3>The dinner</h3>
+              <h4>The dinner</h4>
               <p>I was in a meeting with some communist friends...</p>
               <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
+            </div>
             </div>
           </div>
         </div>
@@ -248,10 +269,12 @@
         <div class="col-4">
           <div class="thumbnail">
             <img src="./assets/brunatruffa_1171972_257363917744652_113536103_n.jpg" alt="...">
+            <div id="galleryTextParent">
             <div class="caption">
-              <h3>The dinner</h3>
+              <h4>The dinner</h4>
               <p>I was in a meeting with some communist friends...</p>
               <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
+            </div>
             </div>
           </div>
         </div>
@@ -259,10 +282,12 @@
         <div class="col-4">
           <div class="thumbnail">
             <img src="./assets/brunatruffa_1171972_257363917744652_113536103_n.jpg" alt="...">
+            <div id="galleryTextParent">
             <div class="caption">
-              <h3>The dinner</h3>
+              <h4>The dinner</h4>
               <p>I was in a meeting with some communist friends...</p>
               <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
+            </div>
             </div>
           </div>
         </div>
@@ -270,10 +295,12 @@
         <div class="col-4">
           <div class="thumbnail">
             <img src="./assets/brunatruffa_1171972_257363917744652_113536103_n.jpg" alt="...">
+            <div id="galleryTextParent">
             <div class="caption">
-              <h3>The dinner</h3>
+              <h4>The dinner</h4>
               <p>I was in a meeting with some communist friends...</p>
               <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
+            </div>
             </div>
           </div>
         </div>
@@ -281,10 +308,12 @@
         <div class="col-4">
           <div class="thumbnail">
             <img src="./assets/brunatruffa_1171972_257363917744652_113536103_n.jpg" alt="...">
+            <div id="galleryTextParent">
             <div class="caption">
-              <h3>The dinner</h3>
+              <h4>The dinner</h4>
               <p>I was in a meeting with some communist friends...</p>
               <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
+            </div>
             </div>
           </div>
         </div>
@@ -292,14 +321,15 @@
         <div class="col-4">
           <div class="thumbnail">
             <img src="./assets/brunatruffa_1171972_257363917744652_113536103_n.jpg" alt="...">
+            <div id="galleryTextParent">
             <div class="caption">
-              <h3>The dinner</h3>
+              <h4>The dinner</h4>
               <p>I was in a meeting with some communist friends...</p>
               <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
             </div>
+            </div>
           </div>
         </div>
-      </div>
 
     </section>
 
