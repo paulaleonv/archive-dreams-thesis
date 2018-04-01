@@ -48,12 +48,23 @@ $(document).ready(function() {
     //$('.navbar-collapse').collapse('hide');
   })
 
+  $("#homeButton_Image").click(function() {
+    $("section").not("#gallery_page").hide();
+    $("#gallery_page").show();
+
+    //gotData();
+
+    // hide expanded navbar
+    //$('.navbar-collapse').collapse('hide');
+  })
+
+
 
 });
 
 
 //Button function
-$("#saveButton").click(saveDreams);
+$("#saveButton_Image").click(saveDreams);
 
 // Initialize Firebase
 const config = {
@@ -88,13 +99,17 @@ function gotData() {
     let key = Object.keys(snapshot.val());
 
     let tagList = [];
+    let titleList = [];
     // Add card element
     key.forEach(function(d) {
       let content = value[d];
       // console.log(content)
       let dt = new Date(content.date);
       let dt_final = (dt.getMonth() + 1) + "/" + dt.getDate() + "/" + dt.getFullYear();
-      let body = content.body.replace(/^(.{130}[^\s]*).*/, "$1") // show only 130 letters
+      //let body = content.body.replace(/^(.{130}[^\s]*).*/, "$1") // show only 130 letters
+      let num = Math.min(content.body.length,130);
+      let body = content.body;
+      let bodyShort = content.body.substring(0, num);
       let title = content.title;
       let tag = content.tag;
 
@@ -102,7 +117,14 @@ function gotData() {
       // put adding tag function here
       for (let i = 0; i < tag.length; i++) {
         tagList.push(tag[i])
-        // console.log(tag[i])
+         //console.log(tag[i])
+      }
+
+      // list of title function
+      // put adding tag function here
+      for (let j = 0; j < title.length; j++) {
+        titleList.push(title[j]);
+         //console.log(title[j]);
       }
 
       $("#archive_page_content").prepend($('<div/>', {
@@ -121,6 +143,7 @@ function gotData() {
                 $('<h4/>', {
                   'class': 'card-title titleFont'
                 }).append($('<a/>').text(title).attr("href", "#").click(function() {
+//ojo: this is not working
                   readDream(title, body, tag, dt_final);
                 })),
                 $('<blockquote/>', {
@@ -130,9 +153,10 @@ function gotData() {
                 }).text(dt_final)),
                 $('<p/>', {
                   'class': 'card-text bodyFont'
-                }).text(body).css("color", "#afafaf")
+                }).text(bodyShort).css("color", "#afafaf")
               ])))))
     });
+
 
     //  Show all tags
     $("#tagList").children().remove();
@@ -140,11 +164,24 @@ function gotData() {
         $("#tagList").append($('<p>', {
           'class': 'eachTag'
         }).text(d))
-      })
+      console.log(tag[i])
+      });
+
+
+
+  // Show all titles
+  $("#titleList").children().remove();
+  titleList.forEach(function(f) {
+      $("#titleList").append($('<p>', {
+        'class': 'eachTitle'
+      }).text(f))
+    });
+
 
   });
 
 }
+
 
 
 // ref.remove();
@@ -218,6 +255,7 @@ function readDream(title, body, tag, date) {
 }
 
 
+
 document.getElementById("searchButtonArchive").addEventListener("click", function() {
   // clear before loading the page
   $("#archive_page_content").children().remove();
@@ -246,12 +284,12 @@ document.getElementById("searchButtonArchive").addEventListener("click", functio
               // put adding tag function here
               for (let i = 0; i < tag.length; i++) {
                 tagList.push(tag[i])
-                // console.log(tag[i])
+                /console.log(tag[i])
               }
 
       if (content.body.indexOf(searchArchiveValue) != -1) {
 
-    
+
 
         $("#archive_page_content").prepend($('<div/>', {
             'class': 'row'
@@ -296,42 +334,6 @@ document.getElementById("searchButtonArchive").addEventListener("click", functio
 
 
 
-//function searcherInput jquery
-
-// (function ($) {
-// 	  jQuery.expr[':'].Contains = function(a,i,m){
-// 		  return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
-// 	  };
-//
-// 	  function listFilter(header, list) {
-//     //create a var with all the words of the dreams
-//     var list ="var to create"
-// 		var form = $("<form>").attr({"class":"filterform","action":"#"}),
-// 			input = $("<input>").attr({"class":"filterinput","type":"text"});
-// 		$(form).append(input).appendTo(header);
-//
-// 		$(input)
-// 		  .change( function () {
-// 			var filter = $(this).val();
-// 			if(filter) {
-// 			  $(list).find("a:not(:Contains(" + filter + "))").parent().slideUp();
-// 			  $(list).find("a:Contains(" + filter + ")").parent().slideDown();
-// 			} else {
-// 			  $(list).find("li").slideDown();
-// 			}
-// 			return false;
-// 		  })
-// 		.keyup( function () {
-// 			$(this).change();
-// 		});
-// 	  }
-//
-// 	  $(function () {
-// 		listFilter($("#header"), $("#list"));
-// 	  });
-// 	}(jQuery));
-
-//end of Jquery function
 
 
 

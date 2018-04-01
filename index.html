@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
   <title>DREAM ARCHIVE</title>
-  <link rel="icon" type="image/png" href="/assets/owlLogo.png" />
+  <link rel="icon" type="image/png" href="/assets/icons/owlLogo.png" />
 
 
 </head>
@@ -22,23 +22,20 @@
   <header>
     <nav style="background-color:#0b0b0c" class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div id="dreamArchivebox" class="container">
+         <a id="homeButton_Image"  style="background-color:#0b0b0c" height="50" ><img src="./assets/icons/Asset1.png" height="50"></a>
 
-
-
+      <!--
         <a id="home_buttonOwl" class="e titleFont" href="#">
-          <!--<h2>Dream Archive</h2>-->
-            <!--   <img src="./assets/owlLogo.png" height="48">
+        <h2>Dream Archive</h2>-->
+            <!--   <img src="./assets/icons/owlLogo.png" height="48">
             </a> -->
-
-
-        <a id="home_button" class="e titleFont" href="#">
+        <!--  <a id="home_button" class="e titleFont" href="#">-->
           <!--<h2>Dream Archive</h2>-->
-          <img src="./assets/Asset1.png" height="44">
-        </a>
+        <!--   <img src="./assets/icons/Asset1.png" height="50">
+        </a>  -->
 
-        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="navbar-collapse collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <!-- <li class="nav-item active">
@@ -59,18 +56,11 @@
         </ul>
 
 
-
-
         <div>
           <form class="form-inline">
             <button id="signin_button" class="btn ml-2 btn-outline-info text-info bodyFont" type="submit">Sign in</button>
-
-        </div>
-        <div class="ml-2">
           </form>
-
         </div>
-
       </div>
     </nav>
   </header>
@@ -86,7 +76,7 @@
         <a id="DA_title_SignInPage" class="e titleFont" href="#">
           <!--<h2>Dream Archive</h2>-->
             <div id="titleParent">
-          <img src="./assets/Asset1.png" height="47"><br> <br> <br>
+          <img src="./assets/icons/Asset1.png" height="47"><br> <br> <br>
 
             </div>
 
@@ -106,9 +96,9 @@
       </form>
 
       <div id="introParent">
-        <p id="intro"> <br><br>This is a private space were you  <br> can record an archive dreams,<br> keep track of them over time<br> and make creative analysis. </p>
+        <p id="intro"> <br><br>This is a private space were you can <br>  record an archive your dreams,<br> keep track of them over time<br> and make creative analysis. </p>
         <br><br>
-         <img src="./assets/owlLogo.png" height="48">
+         <img src="./assets/icons/owlLogo.png" height="48">
       </div>
 
     </section>
@@ -118,43 +108,40 @@
     <section id="archive_page" class="container">
       <div id="archive_page_content"></div>
 
-      <div id"rightColsSearchContent" class= "row">
+        <div class="rightColsSearchContent" class= "row">
 
           <div class="col-3">
 
-      <div id="searchDreamBox">
-        <!-- <a id="addNewDream_button" class="e titleFont" href="#"> <h5> + Add New Dream </h5></a>-->
+            <div id="searchDreamBox">
+              <!-- <a id="addNewDream_button" class="e titleFont" href="#"> <h5> + Add New Dream </h5></a>-->
 
-        <form class="form-inline">
-          <div class="input-group">
-            <input id="searchInputArchive" style="background-color:#0b0b0c;" class="form-control  bodyFont" type="text" placeholder="Search" aria-label="Search">
-            <div class="input-group-append">
-              <button id="searchButtonArchive" class="btn btn-info text-dark bodyFont" style="background-color:#0b0b0c;" type="submit">Go</button>
+              <form class="form-inline">
+                <div class="input-group">
+                  <input id="searchInputArchive" style="background-color:#0b0b0c;" class="form-control  bodyFont" type="text" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                  <button id="searchButtonArchive" class="btn btn-info text-dark bodyFont" style="background-color:#0b0b0c;" type="submit">Go</button>
+                </div>
+                </div>
+              </form>
             </div>
 
-            </div>
-        </form>
-
-  <div id="tagList"></div>
-  </div>
-
+            <div id="tagList"></div>
+        </div>
       </div>
 
-      </div>
+
       <!-- Pagination -->
 
-      <ul class="pagination justify-content-center custom-pagenation">
-        <li class="page-item">
+        <ul class="pagination justify-content-center custom-pagenation">
+          <img src="./assets/icons/arrowLeft.png" height="48">
+          <img src="./assets/icons/arrowRight.png" height="48">
+
+      <!--  <li class="page-item">
           <a class="page-link bodyFont" href="#" aria-label="Previous">
           <span aria-hidden="true">&laquo;</span>
             <span class="sr-only">Previous</span>
             </a>
         </li>
-
-
-
-
-
 
         <li class="page-item bodyFont">
           <a class="page-link" href="#">1</a>
@@ -170,12 +157,15 @@
           <span aria-hidden="true">&raquo;</span>
           <span class="sr-only">Next</span>
           </a>
-        </li>
-      </ul>
+        </li>-->
+
+
+          </ul>
+
+        </div>
 
       </div>
-    </div>
-  </section>
+    </section>
 
 
 
@@ -190,42 +180,57 @@
       <div class="row mt-2 justify-content-center">
         <textarea id="record_body" class="mt-2 w-75 bodyFont" placeholder="What's your dream about?" style="height:50vh"></textarea>
       </div>
+
       <div class="row mt-2 justify-content-center">
         <input id="record_tag" class="mt-2 w-75 bodyFont" placeholder="Tag" style="height:5vh"></textarea>
       </div>
+
       <div class="row mt-2 justify-content-center">
-        <div class="mt-4 btn-group" data-toggle="buttons">
-          <button class="btn btn-secondary" style="width:100px" name="options" id="recordButton"> Record</button>
-          <button class="btn btn-light" style="width:100px" name="options" id="drawButton"> Draw</button>
-          <button class="btn btn-info " style="width:100px" name="options" id="saveButton"> Save</button>
-          <img src="./assets/pencil_icon.png" height="58">
-          <img src="./assets/addImageIcon.png" height="58">
-        </div>
+              <!-- Read a single dream section
+            <div class="mt-4 btn-group" data-toggle="buttons">
+              <button class="btn btn-secondary" style="width:100px" name="options" id="recordButton"> Record</button>
+              <button class="btn btn-light" style="width:100px" name="options" id="drawButton"> Draw</button>
+              <button class="btn btn-info " style="width:100px" name="options" id="saveButton"> Save</button> -->
+              <div class="writeButtonsparent">
+
+                <button id="micButton_Image" style="background-color:#0b0b0c" height="70" "border-bottom-color:black"> <img src="./assets/icons/micIcon_white.png" height="80"></button>
+
+                <button id="drawButton_Image" style="background-color:#0b0b0c" height="80" "border-bottom-color:black"><img src="./assets/icons/pencilIcon_white.png"height="70"></button>
+
+                <button id="saveButton_Image"  style="background-color:#0b0b0c" height="80" "border-bottom-color:black"> <img src="./assets/icons/saveIcon_white.png" height="70"></button>
+
+              </div>
+
+      </div>
 
 
 
     </section>
 
     <!-- Read a single dream section -->
+
     <section id="read_page" class="container">
 
       <div class="row mt-2 justify-content-center">
 
           <div class="readDreamParentButtons">
             <div class="mt-4 btn-group" data-toggle="buttons">
-              <button class="btn btn-secondary" style="width:150px" name="options" id="poetryButton"> Poetry Generator</button>
+               <!--<button class="btn btn-secondary" style="width:150px" name="options" id="poetryButton"> Poetry Generator</button>
               <button class="btn btn-light" style="width:150px" name="options" id="shareButton"> Share</button>
-              <img src="./assets/poetryGenerator_icon.png" height="58">
-              <img src="./assets/share_bird_icon.png" height="58">
+              <button class="DA_buttons" id="shareButton_Icon"> </button>  width="256" height="256"
+              <img src="./assets/icons/poetryGeneratorIcon_incomplete.png" height="58">
+              <img src="./assets/icons/sharaIcon_incomplete.png" height="58">-->
+                <img src="./assets/icons/pgIcon_text.png" height="85" onclick="poeticGeneration();" />
+                <img src="./assets/icons/shareIcon_text.png" height="85" onclick="DoSomething();" />
+              </div>
             </div>
-          </div>
+
             <div class="poetryGeneratorParent">
-              <div class="poetryGenerator">
+              <div class="poetryGenerator" color: white >
                 here we will have some poetry
               </div>
-
             </div>
-
+      </div>
     </section>
 
 
@@ -235,17 +240,20 @@
 
       <div id="gallerySearchSection">
         <!-- <a id="addNewDream_button" class="e titleFont" href="#"> <h5> + Add New Dream </h5></a>-->
-        <div class="col">
-          <form class="form-inline">
-            <div class="input-group">
-              <input style="background-color:#0b0b0c;" class="form-control  bodyFont" type="text" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-info text-dark bodyFont" style="background-color:#0b0b0c;" type="submit">Go</button>
-              </div>
+        <div class="rightColsSearchContent" class= "row">
+          <div class="col-3">
+            <div id="searchGalleryBox">
+              <form class="form-inline">
+                <div class="input-group">
+                  <input style="background-color:#0b0b0c;" class="form-control  bodyFont" type="text" placeholder="Search" aria-label="Search">
+                  <div class="input-group-append">
+                    <button class="btn btn-info text-dark bodyFont" style="background-color:#0b0b0c;" type="submit">Go</button>
+                  </div>
+                </div>
+              </form>
             </div>
+            <!-- --> <div id="titleList"></div>
 
-            <div class="ml-2">
-          </form>
           </div>
         </div>
       </div>
@@ -253,46 +261,20 @@
 
       <div id="galleryImageSection" class="row">
 
-        <div class="col-4">
+        <div class="col-9">
           <div class="thumbnail">
             <img src="./assets/images/marbleHand.jpg" alt="...">
             <div id="galleryTextParent">
             <div class="caption">
               <h4>White marble hands </h4>
-              <p>White marble hands statue on a hill covered with grass, then the hands started bleeding. I feel in awe of somethimg unknown yet, beyond myself</p>
+              <p>White marble hands statue on a hill covered with grass, then the hands started bleeding.</p>
               <p> <a href="#" class="btn btn-default" role="button"> - full dream -</a></p>
             </div>
             </div>
           </div>
         </div>
 
-        <div class="col-4">
-          <div class="thumbnail">
-            <img src="./assets/images/brunatruffa_1171972_257363917744652_113536103_n.jpg" alt="...">
-            <div id="galleryTextParent">
-            <div class="caption">
-              <h4>The dinner</h4>
-              <p>I was in a dinner party with some friends...</p>
-              <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
-            </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-4">
-          <div class="thumbnail">
-            <img src="./assets/images/war2.jpg" alt="...">
-            <div id="galleryTextParent">
-            <div class="caption">
-              <h4>War</h4>
-              <p>It was the ending of a war and we had lost.</p>
-              <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
-            </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-4">
+        <div class="col-9">
           <div class="thumbnail">
             <img src="./assets/images/birdFlying.jpg" alt="...">
             <div id="galleryTextParent">
@@ -305,26 +287,52 @@
           </div>
         </div>
 
-        <div class="col-4">
+        <div class="col-9">
           <div class="thumbnail">
-            <img src="./assets/images/boatSpace.jpg" alt="...">
+            <img src="./assets/images/war2.jpg" alt="...">
             <div id="galleryTextParent">
             <div class="caption">
-              <h4>Boat in space</h4>
-              <p> A black ship that leaves without my authorization. I was with my grandmother. We took the boat, it was black and it flew. We were traveling to space. </p>
+              <h4>War</h4>
+              <p>It was the end of a war and we had lost.</p>
               <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
             </div>
             </div>
           </div>
         </div>
 
-        <div class="col-4">
+        <div class="col-9">
+          <div class="thumbnail">
+            <img src="./assets/images/blueDress.jpg" alt="...">
+            <div id="galleryTextParent">
+            <div class="caption">
+              <h4>blue dress</h4>
+              <p> I always jump in the ocean and see myself in a blue dress.</p>
+              <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-9">
+          <div class="thumbnail">
+            <img src="./assets/images/boatSpace.jpg" alt="...">
+            <div id="galleryTextParent">
+            <div class="caption">
+              <h4>Boat in space</h4>
+              <p> It was a black ship, I was with my grandmother. We took the boat, it flew. We were traveling to space. </p>
+              <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-9">
           <div class="thumbnail">
             <img src="./assets/images/war3.jpg" alt="...">
             <div id="galleryTextParent">
             <div class="caption">
               <h4>Movement</h4>
-              <p>I tried to hide inside the closet, but there was a force that  impede me to move, it  was so hard to move.</p>
+              <p>I tried to hide inside the closet, but there was a force that  impede me to move.</p>
               <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
             </div>
             </div>
@@ -334,7 +342,7 @@
     </section>
 
 
-
+  <!-- Single Dream Gallery section -->
 
 
 
@@ -387,6 +395,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
   <script src="sketch.js"></script>
+  <script src="./poetryGenerator/poetryGenerator_pronouns.js"></script>
   <!-- <script src="./libraries/p5.speech.js"></script> -->
 
 </body>
