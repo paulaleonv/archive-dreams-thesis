@@ -109,7 +109,7 @@ function gotData() {
       //let body = content.body.replace(/^(.{130}[^\s]*).*/, "$1") // show only 130 letters
       let num = Math.min(content.body.length,130);
       let body = content.body;
-      let bodyShort = content.body.substring(0, num);
+      //let bodyShort = content.body.substring(0, num);
       let title = content.title;
       let tag = content.tag;
 
@@ -117,15 +117,16 @@ function gotData() {
       // put adding tag function here
       for (let i = 0; i < tag.length; i++) {
         tagList.push(tag[i])
-         //console.log(tag[i])
+         console.log(tag[i])
       }
 
       // list of title function
-      // put adding tag function here
-      for (let j = 0; j < title.length; j++) {
-        titleList.push(title[j]);
+      // // put adding tag function here
+      // for (let j = 0; j < titleList.length; j++) {
+        titleList.push(title);
+        console.log(titleList)
          //console.log(title[j]);
-      }
+      // }
 
       $("#archive_page_content").prepend($('<div/>', {
           'class': 'row'
@@ -153,7 +154,8 @@ function gotData() {
                 }).text(dt_final)),
                 $('<p/>', {
                   'class': 'card-text bodyFont'
-                }).text(bodyShort).css("color", "#afafaf")
+                    }).text(body).css("color", "#afafaf")
+                //}).text(bodyShort).css("color", "#afafaf")
               ])))))
     });
 
@@ -164,17 +166,17 @@ function gotData() {
         $("#tagList").append($('<p>', {
           'class': 'eachTag'
         }).text(d))
-      console.log(tag[i])
+      // console.log(tag[i])
       });
 
 
 
   // Show all titles
   $("#titleList").children().remove();
-  titleList.forEach(function(f) {
+  titleList.forEach(function(d) {
       $("#titleList").append($('<p>', {
         'class': 'eachTitle'
-      }).text(f))
+      }).text(d))
     });
 
 
@@ -189,7 +191,7 @@ function gotData() {
 function saveDreams() {
   let data = {
     title: $("#record_title").val(),
-    body: $("#record_body").val(),
+    body: $("#record_body").val()? $("#record_body").val():"",
     tag: $("#record_tag").val().split(" "),
     date: new Date().toString()
   }
@@ -322,6 +324,7 @@ document.getElementById("searchButtonArchive").addEventListener("click", functio
     });
     //  Show all tags
     $("#tagList").children().remove();
+    console.log(tagList);
     tagList.forEach(function(d) {
         $("#tagList").append($('<p>', {
           'class': 'eachTag'

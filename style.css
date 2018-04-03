@@ -81,7 +81,7 @@ a {
   margin-left: 400px;
   margin-bottom: : 100px;
   border-style: dotted;
-  border-width: 1.5px;
+  border-width: 0.5px;
   width: 33%;
   text-align: center;
   color: #e7c024;
@@ -224,13 +224,17 @@ margin-bottom: 3%;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+.form-rounded {
+border-radius: 1rem;
+}
 
 #record_title{
   padding-left: 10px;
-  border-bottom : solid 0.2px #eee6e4;
+  border-bottom : 0.2px solid #eee6e4;
   border-left:none;
   border-right:none;
   border-top:none;
+
   background: #0b0b0c;
   color : #fff;
 }
@@ -239,19 +243,19 @@ margin-bottom: 3%;
   padding-left: 10px;
   padding-top: 10px;
   background: #0b0b0c;
-  border : solid 0.1px #eee6e4;
+  border : 0.1px solid #eee6e4;
   color : #fff;
 }
 
 #record_tag {
   padding-left: 10px;
   background: #0b0b0c;
-  border : solid 0.1px #eee6e4;
+  border : 0.1px solid #eee6e4;
   color : #fff;
 }
 
 #read_title{
-  color : #8ad8d7;
+  color : #8ad8d7;  
 }
 
 #read_date{
