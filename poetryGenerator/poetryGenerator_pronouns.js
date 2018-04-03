@@ -2,11 +2,13 @@
 // // poem Pronouns
 // // take all the pronouns of the text
 //
-// var allPronouns = ["I",	"me",	"my",	"mine",	"myself","you",	"your",	"yours", "yourself", "he",	"him",	"his",	"himself", "she",	"her",	"her",	"hers",	"herself", "it", "its", "itself","we","us",	"our", "ours", "ourselves", "you",	"your",	"yours", "ourselves", "they",	"them",	"their", "theirs","themselves"];
+var allPronouns = ["I",	"me",	"my",	"mine",	"myself","you",	"your",	"yours", "yourself", "he",	"him",	"his",	"himself", "she",	"her",	"her",	"hers",	"herself", "it", "its", "itself","we","us",	"our", "ours", "ourselves", "you",	"your",	"yours", "ourselves", "they",	"them",	"their", "theirs","themselves"];
 //
 // //all the words of the dreams in this array
-// var allWordsDream=[];
-// var pronounPoemWords=[];
+var allWordsDream=[];
+var pronounPoemWords=[];
+
+console.log("is this poem here");
 //
 //
 // // hacer que allWords DReam tenga las palabras de ese sueño
