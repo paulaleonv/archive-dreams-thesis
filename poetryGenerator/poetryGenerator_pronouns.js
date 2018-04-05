@@ -1,35 +1,57 @@
-// //Poetry generator library
-// // poem Pronouns
-// // take all the pronouns of the text
-//
+
+
+
+function poemGenerate() {
+    let r = Math.random();
+    
+    if (r > 0.5) {
+        generatePronounPoetry();
+    } else {
+        generateIngPoetry();
+    }
+    
+    
+    
+}
+
+
+function generatePronounPoetry() {
+
 var allPronouns = ["I",	"me",	"my",	"mine",	"myself","you",	"your",	"yours", "yourself", "he",	"him",	"his",	"himself", "she",	"her",	"her",	"hers",	"herself", "it", "its", "itself","we","us",	"our", "ours", "ourselves", "you",	"your",	"yours", "ourselves", "they",	"them",	"their", "theirs","themselves"];
 //
-// //all the words of the dreams in this array
-var allWordsDream=[];
-var pronounPoemWords=[];
 
-console.log("is this poem here");
-//
-//
-// // hacer que allWords DReam tenga las palabras de ese sueño
-// function pronounPoem(){
-//   for (var i=0; allWordsDream.lenght[i];i++) {
-//
-//     //console.log (allPronouns)
-//     for (var j=0; allPronouns.lenght[j];j++) {
-//
-//       if (i == j) {
-//         //append word to pronounPoemWords[]
-//       }
-//       if
-//     }
-//
-//
-//   }
-//  poemDiagramation(6,random(2,3,4),2, random(2,3,4))
-//
-// }
-//
+let allWordsDream=[];
+let pronounPoemWords=[];
+
+let ingWords=[];    
+    
+//    let dream = select('#read_body').html();
+    let dream = document.getElementById('read_body').innerHTML;
+//    console.log(dream);
+// // algorithm for generating the text
+//    
+//    //let words = dream.split(' ');
+//    
+////  let poem = random(words) + ' ' random(words);
+//    let poem = dream;
+    
+    
+    document.getElementById('poem').innerHTML = dream;
+    document.getElementById('poem').innerHTML = "here we will have a poem";
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
 // //textSize,typography
 // function poemDiagramation(wordPerLine,spaceBetweenWords,spaceBetweenLines, tabSpaces){
 //
@@ -95,3 +117,5 @@ console.log("is this poem here");
 // } while (m);
 //
 // }
+
+

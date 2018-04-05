@@ -193,6 +193,11 @@ function saveDreams() {
     date: new Date().toString()
   }
   ref.push(data);
+
+  $("#record_title").val('')
+  $("#record_body").val('')
+  $("#record_tag").val('')
+
 }
 
 
@@ -330,3 +335,5 @@ document.getElementById("searchButtonArchive").addEventListener("click", functio
   });
 
 })
+
+
