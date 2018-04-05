@@ -335,3 +335,5 @@ document.getElementById("searchButtonArchive").addEventListener("click", functio
   });
 
 })
+
+

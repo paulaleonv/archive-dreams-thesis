@@ -221,13 +221,13 @@
               <button class="DA_buttons" id="shareButton_Icon"> </button>  width="256" height="256"
               <img src="./assets/icons/poetryGeneratorIcon_incomplete.png" height="58">
               <img src="./assets/icons/sharaIcon_incomplete.png" height="58">-->
-                <img src="./assets/icons/pgIcon_text.png" height="85" onclick="poetryGeneration();" />
+                <img src="./assets/icons/pgIcon_text.png" height="85" onclick="generatePronounPoetry();" />
                 <img src="./assets/icons/shareIcon_text.png" height="85" onclick="DoSomething();" />
               </div>
             </div>
 
             <div class="poetryGeneratorParent">
-              <div class="poetryGenerator" color: white >
+              <div class="poetryGenerator" id="poem" color: white >
                 here we will have some poetry
               </div>
             </div>
@@ -268,9 +268,9 @@
             <img src="./assets/images/marbleHand.jpg" alt="...">
             <div id="galleryTextParent">
             <div class="caption">
-              <h4>White marble hands </h4>
+              <!--  <h4>White marble hands </h4>-->
               <p>White marble hands statue on a hill covered with grass, then the hands started bleeding.</p>
-              <p> <a href="#" class="btn btn-default" role="button"> - full dream -</a></p>
+              <!--<p> <a href="#" class="btn btn-default" role="button"> - full dream -</a></p>-->
             </div>
             </div>
           </div>
@@ -281,9 +281,7 @@
             <img src="./assets/images/birdFlying.jpg" alt="...">
             <div id="galleryTextParent">
             <div class="caption">
-              <h4>fly</h4>
               <p>I was flying...</p>
-              <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
             </div>
             </div>
           </div>
@@ -294,9 +292,7 @@
             <img src="./assets/images/war2.jpg" alt="...">
             <div id="galleryTextParent">
             <div class="caption">
-              <h4>War</h4>
               <p>It was the end of a war and we had lost.</p>
-              <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
             </div>
             </div>
           </div>
@@ -307,9 +303,7 @@
             <img src="./assets/images/blueDress.jpg" alt="...">
             <div id="galleryTextParent">
             <div class="caption">
-              <h4>blue dress</h4>
               <p> I always jump in the ocean and see myself in a blue dress.</p>
-              <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
             </div>
             </div>
           </div>
@@ -320,9 +314,7 @@
             <img src="./assets/images/boatSpace.jpg" alt="...">
             <div id="galleryTextParent">
             <div class="caption">
-              <h4>Boat in space</h4>
               <p> It was a black ship, I was with my grandmother. We took the boat, it flew. We were traveling to space. </p>
-              <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
             </div>
             </div>
           </div>
@@ -333,9 +325,7 @@
             <img src="./assets/images/war3.jpg" alt="...">
             <div id="galleryTextParent">
             <div class="caption">
-              <h4>Movement</h4>
               <p>I tried to hide inside the closet, but there was a force that  impede me to move.</p>
-              <p> <a href="#" class="btn btn-default" role="button">full dream</a></p>
             </div>
             </div>
           </div>
@@ -397,7 +387,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
   <script src="sketch.js"></script>
-  <script src="./poetryGenerator/poetryGenerator_pronouns.js"></script>
+  <script src="poetryGenerator/poetryGenerator_pronouns.js"></script>
   <!-- <script src="./libraries/p5.speech.js"></script> -->
 
 </body>
