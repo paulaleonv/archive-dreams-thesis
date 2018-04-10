@@ -64,23 +64,30 @@ $(document).ready(function() {
 
 
 // Change buttons' background image
-$("#saveButton_Image").click(function() {
+$("#saveButton_Image").mouseover(function() {
   $("#saveButton_background").attr("src", "./assets/icons/saveIcon_text_lb.png");
   $("#micButton_background").attr("src", "./assets/icons/micIcon_white.png");
   $("#drawButton_background").attr("src", "./assets/icons/pencilIcon_white.png");
 });
 
-$("#drawButton_Image").click(function() {
-  $("#drawButton_background").attr("src", "./assets/icons/pencilIcon_white.png");
+$("#drawButton_Image").mouseover(function() {
+  $("#drawButton_background").attr("src", "./assets/drawButtonIcon_lb&white.png");
   $("#saveButton_background").attr("src", "./assets/icons/saveIcon_white.png");
   $("#micButton_background").attr("src", "./assets/icons/micIcon_white.png");
 });
 
-$("#micButton_Image").click(function() {
-  $("#micButton_background").attr("src", "./assets/icons/micIcon_white.png");
+$("#micButton_Image").mouseover(function() {
+  $("#micButton_background").attr("src", "./assets/micButtonIcon_lb.png");
   $("#saveButton_background").attr("src", "./assets/icons/saveIcon_white.png");
   $("#drawButton_background").attr("src", "./assets/icons/pencilIcon_white.png");
 });
+
+// if you want to make click interaction, do it as below ('click', instead of 'mouseover')
+// $("#saveButton_Image").click(function() {
+  // $("#saveButton_background").attr("src", "./assets/icons/saveIcon_text_lb.png");
+  // $("#micButton_background").attr("src", "./assets/icons/micIcon_white.png");
+  // $("#drawButton_background").attr("src", "./assets/icons/pencilIcon_white.png");
+// });
 
 //Button function
 $("#saveButton_Image").click(saveDreams);
