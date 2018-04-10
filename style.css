@@ -283,6 +283,11 @@ border-radius: 1rem;
   /* background-color: #fff */
 }
 
-#drawButton_Image, #saveButton_Image, #micButton_Image, #homeButton_Image  {
+#drawButton_Image, #saveButton_Image, #micButton_Image, #homeButton_Image, #addButton_Image  {
   border: none;
+}
+#addButton_Image {
+  align-self: center;
+
+
 }

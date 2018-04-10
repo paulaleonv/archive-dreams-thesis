@@ -1,7 +1,7 @@
 // Menu selection
 $(document).ready(function() {
 
-  $("section").not("#login_page").hide();
+  $("section").not("#gallery_page").hide();
   // $("section").not( "#archive_page" ).hide();
   // $("section").not("#record_page").hide();
   // $("section").not("#read_page").hide();
@@ -110,7 +110,7 @@ function gotData() {
 
 
       let body = content.body;
-      let num = body? Math.min(body.length,130):0; 
+      let num = body? Math.min(body.length,130):0;
       //let bodyShort = content.body.substring(0, num);
       let title = content.title;
       let tag = content.tag;
