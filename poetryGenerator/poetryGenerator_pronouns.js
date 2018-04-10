@@ -27,7 +27,7 @@ let ingWords=[];
 //    console.log(dream);
 // // algorithm for generating the text
 //
-    let words = dream.split(' ');
+    let words = dream;//.split(' ');
     //console.log(words)
 //
 ////  let poem = random(words) + ' ' random(words);
@@ -35,34 +35,48 @@ let ingWords=[];
 
 
 let re1 = /\bI|\bi|\bme\bmy|\bmine|\bmyself\byou|\byour|\byours\byourself|\bhe|\bhim\bhis|\bhimself|\bshe\bher|\bhers|\bherself\bit|\bits|\bitself\bwe|\bus|\bour\bourselves|\byou|\byour\byours|\bourselves|\bthey\bthem|\btheir|\btheirs\bthemselves|\bHe/g
+
+console.log(words);
 // let dreamBase =" her cat my bat me her sat";
 // //let dreamBase = text(body);
 //
 //
  //do {
-     m = re1.exec(words);
+     // m = re1.exec(words);
+     m=words.match(re1)
 //     if (m) {
          console.log(m);
 //     }
  //} while (m);
 
-var text = "";
-var i;
-for (i = 0; i < words.length; i++) {
-  if words[i] in re1 {
-    text += words[i] + "<br>";
-    }
-}
-
-
-
-
-
+// var text = "";
+// var i;
+// for (i = 0; i < words.length; i++) {
+//   if words[i] in re1 {
+//     text += words[i] + "<br>";
+//     }
+// }
 
     //document.getElementById('poem').innerHTML = dream;
     //document.getElementById('poem').innerHTML = "here we will have a poem";
-    //document.getElementById('poem').innerHTML = m;
-    document.getElementById('poem').innerHTML = text;
+    document.getElementById('poem').innerHTML = m;
+    // document.getElementById('poem').innerHTML = text;
+
+
+}
+
+function generateIngPoetry() {
+
+  let ingWords=[];
+
+  //    let dream = select('#read_body').html();
+      let dream = document.getElementById('read_body').innerHTML;
+  //    console.log(dream);
+  // // algorithm for generating the text
+  //
+      let words = dream;//.split(' ');
+
+
 
 
 }
