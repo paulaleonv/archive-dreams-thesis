@@ -107,8 +107,10 @@ function gotData() {
       let dt = new Date(content.date);
       let dt_final = (dt.getMonth() + 1) + "/" + dt.getDate() + "/" + dt.getFullYear();
       //let body = content.body.replace(/^(.{130}[^\s]*).*/, "$1") // show only 130 letters
-      let num = Math.min(content.body.length,130);
+
+
       let body = content.body;
+      let num = body? Math.min(body.length,130):0; 
       //let bodyShort = content.body.substring(0, num);
       let title = content.title;
       let tag = content.tag;
@@ -335,5 +337,3 @@ document.getElementById("searchButtonArchive").addEventListener("click", functio
   });
 
 })
-
-
