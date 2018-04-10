@@ -141,16 +141,15 @@ function gotData() {
       let title = content.title;
       let tag = content.tag;
 
-
       // put adding tag function here
       for (let i = 0; i < tag.length; i++) {
         tagList.push(tag[i])
-        console.log(tag[i])
+        // console.log(tag[i])
       }
 
       // list of title function
       titleList.push(title);
-      console.log(titleList)
+      // console.log(titleList)
 
 
       $("#archive_page_content").prepend($('<div/>', {
@@ -190,7 +189,7 @@ function gotData() {
     tagList.forEach(function(d) {
       $("#tagList").append($('<p>', {
         'class': 'eachTag'
-      }).text(d))
+      }).text(d).click(function(){tagClicked(d)}))
       // console.log(tag[i])
     });
 
@@ -315,14 +314,11 @@ document.getElementById("searchButtonArchive").addEventListener("click", functio
 
       // put adding tag function here
       for (let i = 0; i < tag.length; i++) {
-        tagList.push(tag[i]) /
-          console.log(tag[i])
+        tagList.push(tag[i])
+          // console.log(tag[i])
       }
 
       if (content.body.indexOf(searchArchiveValue) != -1) {
-
-
-
         $("#archive_page_content").prepend($('<div/>', {
             'class': 'row'
           })
@@ -354,12 +350,79 @@ document.getElementById("searchButtonArchive").addEventListener("click", functio
     });
     //  Show all tags
     $("#tagList").children().remove();
-    console.log(tagList);
+    // console.log(tagList);
     tagList.forEach(function(d) {
       $("#tagList").append($('<p>', {
         'class': 'eachTag'
-      }).text(d))
+      }).text(d).click(function(){tagClicked(d)}))
     })
   });
 
 })
+
+function tagClicked(selectedTag) {
+    // clear before loading the page
+    $("#archive_page_content").children().remove();
+
+    ref.once('value').then(function(snapshot) {
+      let value = snapshot.val();
+      let key = Object.keys(snapshot.val());
+
+      let tagList = [];
+      // Add card element
+      key.forEach(function(d) {
+        let content = value[d];
+        // console.log(content)
+
+        let dt = new Date(content.date);
+        let dt_final = (dt.getMonth() + 1) + "/" + dt.getDate() + "/" + dt.getFullYear();
+        let body = content.body.replace(/^(.{130}[^\s]*).*/, "$1") // show only 130 letters
+        let title = content.title;
+        let tag = content.tag;
+
+        // put adding tag function here
+        for (let i = 0; i < tag.length; i++) {
+          tagList.push(tag[i])
+            // console.log(tag[i])
+        }
+
+        if (content.body.indexOf(selectedTag) != -1) {
+          $("#archive_page_content").prepend($('<div/>', {
+              'class': 'row'
+            })
+            .append($('<div/>', {
+                'class': 'col-lg-7 colum-sizing'
+              })
+              .append($('<div/>', {
+                  'class': 'card h-100 custom-card'
+                })
+                .append($('<div/>', {
+                    'class': 'card-body'
+                  })
+                  .append([
+                    $('<h4/>', {
+                      'class': 'card-title titleFont'
+                    }).append($('<a/>').text(title).attr("href", "#").click(function() {
+                      readDream(title, body, tag, dt_final);
+                    })),
+                    $('<blockquote/>', {
+                      'class': 'blockquote'
+                    }).append($('<footer/>', {
+                      'class': 'blockquote-footer'
+                    }).text(dt_final)),
+                    $('<p/>', {
+                      'class': 'card-text bodyFont'
+                    }).text(body).css("color", "#afafaf")
+                  ])))))
+        }
+      });
+      //  Show all tags
+      $("#tagList").children().remove();
+      // console.log(tagList);
+      tagList.forEach(function(d) {
+        $("#tagList").append($('<p>', {
+          'class': 'eachTag'
+        }).text(d).click(function(){tagClicked(d)}))
+      })
+    });
+}
