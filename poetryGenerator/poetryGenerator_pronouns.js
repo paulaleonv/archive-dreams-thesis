@@ -57,15 +57,26 @@ console.log(words);
 //     }
 // }
 
-
-
-
-
-
     //document.getElementById('poem').innerHTML = dream;
     //document.getElementById('poem').innerHTML = "here we will have a poem";
     document.getElementById('poem').innerHTML = m;
     // document.getElementById('poem').innerHTML = text;
+
+
+}
+
+function generateIngPoetry() {
+
+  let ingWords=[];
+
+  //    let dream = select('#read_body').html();
+      let dream = document.getElementById('read_body').innerHTML;
+  //    console.log(dream);
+  // // algorithm for generating the text
+  //
+      let words = dream;//.split(' ');
+
+
 
 
 }
