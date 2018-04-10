@@ -63,6 +63,25 @@ $(document).ready(function() {
 });
 
 
+// Change buttons' background image
+$("#saveButton_Image").click(function() {
+  $("#saveButton_background").attr("src", "./assets/icons/saveIcon_text_lb.png");
+  $("#micButton_background").attr("src", "./assets/icons/micIcon_white.png");
+  $("#drawButton_background").attr("src", "./assets/icons/pencilIcon_white.png");
+});
+
+$("#drawButton_Image").click(function() {
+  $("#drawButton_background").attr("src", "./assets/icons/pencilIcon_white.png");
+  $("#saveButton_background").attr("src", "./assets/icons/saveIcon_white.png");
+  $("#micButton_background").attr("src", "./assets/icons/micIcon_white.png");
+});
+
+$("#micButton_Image").click(function() {
+  $("#micButton_background").attr("src", "./assets/icons/micIcon_white.png");
+  $("#saveButton_background").attr("src", "./assets/icons/saveIcon_white.png");
+  $("#drawButton_background").attr("src", "./assets/icons/pencilIcon_white.png");
+});
+
 //Button function
 $("#saveButton_Image").click(saveDreams);
 
@@ -110,7 +129,7 @@ function gotData() {
 
 
       let body = content.body;
-      let num = body? Math.min(body.length,130):0;
+      let num = body ? Math.min(body.length, 130) : 0;
       //let bodyShort = content.body.substring(0, num);
       let title = content.title;
       let tag = content.tag;
@@ -119,12 +138,12 @@ function gotData() {
       // put adding tag function here
       for (let i = 0; i < tag.length; i++) {
         tagList.push(tag[i])
-         console.log(tag[i])
+        console.log(tag[i])
       }
 
       // list of title function
-        titleList.push(title);
-        console.log(titleList)
+      titleList.push(title);
+      console.log(titleList)
 
 
       $("#archive_page_content").prepend($('<div/>', {
@@ -143,7 +162,7 @@ function gotData() {
                 $('<h4/>', {
                   'class': 'card-title titleFont'
                 }).append($('<a/>').text(title).attr("href", "#").click(function() {
-//ojo: this is not working
+                  //ojo: this is not working
                   readDream(title, body, tag, dt_final);
                 })),
                 $('<blockquote/>', {
@@ -153,7 +172,7 @@ function gotData() {
                 }).text(dt_final)),
                 $('<p/>', {
                   'class': 'card-text bodyFont'
-                    }).text(body).css("color", "#afafaf")
+                }).text(body).css("color", "#afafaf")
                 //}).text(bodyShort).css("color", "#afafaf")
               ])))))
     });
@@ -162,17 +181,17 @@ function gotData() {
     //  Show all tags
     $("#tagList").children().remove();
     tagList.forEach(function(d) {
-        $("#tagList").append($('<p>', {
-          'class': 'eachTag'
-        }).text(d))
+      $("#tagList").append($('<p>', {
+        'class': 'eachTag'
+      }).text(d))
       // console.log(tag[i])
-      });
+    });
 
 
 
-  // Show all titles
-  $("#titleList").children().remove();
-  titleList.forEach(function(d) {
+    // Show all titles
+    $("#titleList").children().remove();
+    titleList.forEach(function(d) {
       $("#titleList").append($('<p>', {
         'class': 'eachTitle'
       }).text(d))
@@ -190,7 +209,7 @@ function gotData() {
 function saveDreams() {
   let data = {
     title: $("#record_title").val(),
-    body: $("#record_body").val()? $("#record_body").val():"",
+    body: $("#record_body").val() ? $("#record_body").val() : "",
     tag: $("#record_tag").val().split(" "),
     date: new Date().toString()
   }
@@ -273,25 +292,25 @@ document.getElementById("searchButtonArchive").addEventListener("click", functio
     let value = snapshot.val();
     let key = Object.keys(snapshot.val());
 
-    let tagList=[];
+    let tagList = [];
     // Add card element
     key.forEach(function(d) {
       let content = value[d];
       // console.log(content)
 
 
-              let dt = new Date(content.date);
-              let dt_final = (dt.getMonth() + 1) + "/" + dt.getDate() + "/" + dt.getFullYear();
-              let body = content.body.replace(/^(.{130}[^\s]*).*/, "$1") // show only 130 letters
-              let title = content.title;
-              let tag = content.tag;
+      let dt = new Date(content.date);
+      let dt_final = (dt.getMonth() + 1) + "/" + dt.getDate() + "/" + dt.getFullYear();
+      let body = content.body.replace(/^(.{130}[^\s]*).*/, "$1") // show only 130 letters
+      let title = content.title;
+      let tag = content.tag;
 
 
-              // put adding tag function here
-              for (let i = 0; i < tag.length; i++) {
-                tagList.push(tag[i])
-                /console.log(tag[i])
-              }
+      // put adding tag function here
+      for (let i = 0; i < tag.length; i++) {
+        tagList.push(tag[i]) /
+          console.log(tag[i])
+      }
 
       if (content.body.indexOf(searchArchiveValue) != -1) {
 
@@ -330,10 +349,10 @@ document.getElementById("searchButtonArchive").addEventListener("click", functio
     $("#tagList").children().remove();
     console.log(tagList);
     tagList.forEach(function(d) {
-        $("#tagList").append($('<p>', {
-          'class': 'eachTag'
-        }).text(d))
-      })
+      $("#tagList").append($('<p>', {
+        'class': 'eachTag'
+      }).text(d))
+    })
   });
 
 })
