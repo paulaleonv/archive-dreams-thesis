@@ -21,10 +21,7 @@ body {
   /* overflow: auto; */
 }
 
-#gallery_page_title {
-font-size: 2 em;
-  margin-bottom: 5px;
-}
+
 
 .form-inline {
 justify-content: flex-end;
@@ -91,9 +88,11 @@ a {
   margin-bottom: : 100px;
   border-style: dotted;
   border-width: 0.5px;
+  border-color: #e7c024;
   width: 33%;
   text-align: center;
-  color: #e7c024;
+  font-size: 1.4em;
+  color:white;
 /*db5a04 #e7c024   #dd7937*/
 
 }

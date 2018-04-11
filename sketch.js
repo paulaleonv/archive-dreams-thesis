@@ -23,7 +23,7 @@ $(document).ready(function() {
     $('.navbar-collapse').collapse('hide');
   })
 
-  $("#gallery_page_button").click(function() {
+  $("#addButton_Image").click(function() {
 
     $("section").not("#record_page").hide();
     $("#record_page").show();
