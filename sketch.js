@@ -23,7 +23,7 @@ $(document).ready(function() {
     $('.navbar-collapse').collapse('hide');
   })
 
-  $("#record_page_button").click(function() {
+  $("#addButton_Image").click(function() {
 
     $("section").not("#record_page").hide();
     $("#record_page").show();
@@ -101,6 +101,13 @@ const config = {
   storageBucket: "dreamarchive-a89e5.appspot.com",
   messagingSenderId: "138872739434"
 };
+
+// Initialize the default app_ OJO:BORRAR ESTO SI NECESITO VOLVER A LO ANTERIOR
+//var defaultApp = firebase.initializeApp(defaultAppConfig);
+//console.log(defaultApp.name);  // "[DEFAULT]"
+
+
+//OJO:
 firebase.initializeApp(config);
 database = firebase.database();
 // let ref = database.ref('newUserDreamsDB');
