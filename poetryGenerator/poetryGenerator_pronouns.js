@@ -59,7 +59,14 @@ console.log(words);
 
     //document.getElementById('poem').innerHTML = dream;
     //document.getElementById('poem').innerHTML = "here we will have a poem";
-    document.getElementById('poem').innerHTML = m;
+  document.getElementById('poem').innerHTML ="";
+  m.forEach(function(mtemp){
+    console.log(mtemp)
+    let para = document.createElement('p');
+    para.innerHTML = mtemp;
+    para.className = 'pronoun_word';
+    document.getElementById('poem').appendChild(para);
+  })
     // document.getElementById('poem').innerHTML = text;
 
 

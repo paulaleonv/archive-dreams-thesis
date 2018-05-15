@@ -17,7 +17,6 @@
 </head>
 
 <body>
-
   <!-- Fixed navbar -->
   <header>
     <nav style="background-color:#0b0b0c" class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -45,14 +44,17 @@
 
 
         <li class="nav-item titleFont">
-          <a id="archive_page_button" class="nav-link" href="#">My Archive</a>
+          <a id="archive_page_button" class="nav-link" href="#">My archive</a>
         </li>
+
         <li class="nav-item titleFont">
           <a id="record_page_button" class="nav-link" href="#">New Dream</a>
         </li>
+
         <li class="nav-item titleFont">
           <a id="gallery_page_button" class="nav-link" href="#">Gallery</a>
         </li>
+
         </ul>
 
 
@@ -101,7 +103,20 @@
          <img src="./assets/icons/owlLogo.png" height="48">
       </div>
 
+
+          <div class="explanationAuthentication">
+            <div class="explanationAuthentication" color: white >
+          We are in the process of creating the authentication of the page. <br> It will be ready in June 2018.
+              <br><br>
+            - work in progress -
+            <br>
+            </div>
+          </div>
+
     </section>
+
+
+
 
     <!-- Archive section -->
 
@@ -112,12 +127,19 @@
 
           <div class="col-12">
 
+<!--
             <div id="searchDreamBox">
-              <!-- <a id="addNewDream_button" class="e titleFont" href="#"> <h5> + Add New Dream </h5></a>-->
+              <div class="parentAddButton">
+               <button id="addButton_Image" style="background-color:#0b0b0c" height="40" "border-bottom-color:black"> <img src="./assets/icons/addNewDream_white_lb.png" height="40"></button>
+             </div>
+             <a id="addNewDream_button" class="e titleFont" href="#"> <h5> + Add New Dream </h5></a>-->
 
               <form class="form-inline" >
                 <div class="input-group">
-                  <input id="searchInputArchive" style="background-color:#0b0b0c;" class="form-control  bodyFont" type="text" placeholder="Search" aria-label="Search">
+                  <input id="searchInputArchive" type="text" style="background-color:#0b0b0c;"
+                  class="form-control  bodyFont" type="text" placeholder="Search" aria-label="Search">
+
+
                 <div class="input-group-append">
                   <button id="searchButtonArchive" class="btn btn-info text-dark bodyFont" style="background-color:#0b0b0c;" type="submit">Go</button>
                 </div>
@@ -131,7 +153,7 @@
       </div>
 
 
-      <!-- Pagination -->
+      <!-- Pagination
 
         <ul class="pagination justify-content-center custom-pagenation">
           <img src="./assets/icons/arrowLeft.png" height="48">
@@ -193,12 +215,11 @@
               <button class="btn btn-light" style="width:100px" name="options" id="drawButton"> Draw</button>
               <button class="btn btn-info " style="width:100px" name="options" id="saveButton"> Save</button> -->
               <div class="writeButtonsparent">
+                <button id="micButton_Image" style="background-color:#0b0b0c" height="80" "border-bottom-color:black"> <img id="micButton_background" src="./assets/icons/micIcon_white.png" height="80"></button>
 
-                <button id="micButton_Image" style="background-color:#0b0b0c" height="70" "border-bottom-color:black"> <img src="./assets/icons/micIcon_white.png" height="80"></button>
+                <button id="drawButton_Image" style="background-color:#0b0b0c" height="80" "border-bottom-color:black"><img id="drawButton_background" src="./assets/icons/pencilIcon_white.png"height="80"></button>
 
-                <button id="drawButton_Image" style="background-color:#0b0b0c" height="80" "border-bottom-color:black"><img src="./assets/icons/pencilIcon_white.png"height="70"></button>
-
-                <button id="saveButton_Image"  style="background-color:#0b0b0c" height="80" "border-bottom-color:black"> <img src="./assets/icons/saveIcon_white.png" height="70"></button>
+                <button id="saveButton_Image"  style="background-color:#0b0b0c" height="80" "border-bottom-color:black"> <img id="saveButton_background" src="./assets/icons/saveIcon_white.png" height="80"></button>
 
               </div>
 
@@ -221,14 +242,14 @@
               <button class="DA_buttons" id="shareButton_Icon"> </button>  width="256" height="256"
               <img src="./assets/icons/poetryGeneratorIcon_incomplete.png" height="58">
               <img src="./assets/icons/sharaIcon_incomplete.png" height="58">-->
-                <img src="./assets/icons/pgIcon_text.png" height="85" onclick="generatePronounPoetry();" />
-                <img src="./assets/icons/shareIcon_text.png" height="85" onclick="DoSomething();" />
+                <img src="./assets/icons/pgIcon_white.png" height="100" onclick="generatePronounPoetry();" />
+                <img src="./assets/icons/shareIcon_white.png" height="100" onclick="DoSomething();" />
               </div>
             </div>
 
             <div class="poetryGeneratorParent">
               <div class="poetryGenerator" id="poem" color: white >
-                here we will have some poetry
+
               </div>
             </div>
       </div>
@@ -239,11 +260,36 @@
 
     <section id="gallery_page" class="container">
 
+  <div id="gallery_page_Parent" class="row">
+      <div class="presentationGalleryParent">
+        <div class="presentationGallery" id="poem" color: white >
+          This is a place were we will expose visual art work created with images from the dreams people share with the app, exploring analog and digital techniques
+          <br><br>
+        <br>
+      (the images below are just an example)
+        </div>
+      </div>
+
+
+  <!--
+
       <div id="gallerySearchSection">
-        <!-- <a id="addNewDream_button" class="e titleFont" href="#"> <h5> + Add New Dream </h5></a>-->
+        <a id="addNewDream_button" class="e titleFont" href="#"> <h5> + Add New Dream </h5></a>
         <div class="rightColsSearchContent" class= "row">
           <div class="col-12">
+
+
+
+
+
+
+
             <div id="searchGalleryBox">
+               <div class="parentAddButton">
+
+                <button id="addButton_Image" style="background-color:#0b0b0c" height="40" "border-bottom-color:black"> <img src="./assets/icons/addNewDream_white_lb.png" height="40"></button>
+              </div>
+
               <form class="form-inline">
                 <div class="input-group">
                   <input style="background-color:#0b0b0c;" class="form-control  bodyFont" type="text" placeholder="Search" aria-label="Search">
@@ -252,31 +298,32 @@
                   </div>
                 </div>
               </form>
-                <!-- --> <div id="titleList"> </div>
+                < <div id="titleList"> </div>
             </div>
 
 
           </div>
         </div>
       </div>
+-->
+
 
 
       <div id="galleryImageSection" class="row">
 
-        <div class="col-9">
+        <div class="col-10">
           <div class="thumbnail">
             <img src="./assets/images/marbleHand.jpg" alt="...">
             <div id="galleryTextParent">
             <div class="caption">
-              <!--  <h4>White marble hands </h4>-->
-              <p>White marble hands statue on a hill covered with grass, then the hands started bleeding.</p>
-              <!--<p> <a href="#" class="btn btn-default" role="button"> - full dream -</a></p>-->
+              <p>White marble hands statue on a hill covered with grass, <br>then the hands started bleeding.</p>
+              <p> <a href="#" class="btn btn-default" role="button"></a></p>
             </div>
             </div>
           </div>
         </div>
 
-        <div class="col-9">
+        <div class="col-10">
           <div class="thumbnail">
             <img src="./assets/images/birdFlying.jpg" alt="...">
             <div id="galleryTextParent">
@@ -287,7 +334,7 @@
           </div>
         </div>
 
-        <div class="col-9">
+        <div class="col-10">
           <div class="thumbnail">
             <img src="./assets/images/war2.jpg" alt="...">
             <div id="galleryTextParent">
@@ -298,7 +345,7 @@
           </div>
         </div>
 
-        <div class="col-9">
+        <div class="col-10">
           <div class="thumbnail">
             <img src="./assets/images/blueDress.jpg" alt="...">
             <div id="galleryTextParent">
@@ -309,27 +356,29 @@
           </div>
         </div>
 
-        <div class="col-9">
+        <div class="col-10">
           <div class="thumbnail">
             <img src="./assets/images/boatSpace.jpg" alt="...">
             <div id="galleryTextParent">
             <div class="caption">
-              <p> It was a black ship, I was with my grandmother. We took the boat, it flew. We were traveling to space. </p>
+              <p> It was a black ship, I was with my grandmother. <br>We took the boat, it flew. We were traveling to space. </p>
             </div>
             </div>
           </div>
         </div>
 
-        <div class="col-9">
+        <div class="col-10">
           <div class="thumbnail">
             <img src="./assets/images/war3.jpg" alt="...">
             <div id="galleryTextParent">
             <div class="caption">
-              <p>I tried to hide inside the closet, but there was a force that  impede me to move.</p>
+              <p>I tried to hide inside the closet, but there was a force <br>that  impede me to move.</p>
             </div>
             </div>
           </div>
         </div>
+
+    </div>
 
     </section>
 
