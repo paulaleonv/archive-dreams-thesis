@@ -1,8 +1,17 @@
 // Menu selection
 $(document).ready(function() {
 
-  $("section").not("#gallery_page").hide();
-  // $("section").not( "#archive_page" ).hide();
+
+  $("#archive_page_button").click(function() {
+    $("section").not("#archive_page").hide();
+    $("#archive_page").show();
+    gotData();
+
+    // hide expanded navbar
+    $('.navbar-collapse').collapse('hide');
+  })
+  //$("section").not("#gallery_page").hide();
+   $("section").not( "#archive_page" ).hide();
   // $("section").not("#record_page").hide();
   // $("section").not("#read_page").hide();
 
@@ -14,16 +23,9 @@ $(document).ready(function() {
     $('.navbar-collapse').collapse('hide');
   })
 
-  $("#archive_page_button").click(function() {
-    $("section").not("#archive_page").hide();
-    $("#archive_page").show();
-    gotData();
 
-    // hide expanded navbar
-    $('.navbar-collapse').collapse('hide');
-  })
 
-  $("#addButton_Image").click(function() {
+  $("#record_page_button").click(function() {
 
     $("section").not("#record_page").hide();
     $("#record_page").show();
@@ -38,25 +40,36 @@ $(document).ready(function() {
 
   })
 
+
+$("#archive_page_button").click(function() {
+  $("section").not("#archive_page").hide();
+  $("#archive_page").show();
+  gotData();
+
+  // hide expanded navbar
+  $('.navbar-collapse').collapse('hide');
+})
+
+  
   $("#gallery_page_button").click(function() {
     $("section").not("#gallery_page").hide();
     $("#gallery_page").show();
 
     //gotData();
 
-    // hide expanded navbar
-    //$('.navbar-collapse').collapse('hide');
+     //hide expanded navbar
+    $('.navbar-collapse').collapse('hide');
   })
 
-  $("#homeButton_Image").click(function() {
-    $("section").not("#gallery_page").hide();
-    $("#gallery_page").show();
+//  $("#homeButton_Image").click(function() {
+  //  $("section").not("#gallery_page").hide();
+  //  $("#gallery_page").show();
 
     //gotData();
 
     // hide expanded navbar
     //$('.navbar-collapse').collapse('hide');
-  })
+//  })
 
 
 
@@ -65,19 +78,19 @@ $(document).ready(function() {
 
 // Change buttons' background image
 $("#saveButton_Image").mouseover(function() {
-  $("#saveButton_background").attr("src", "./assets/icons/saveIcon_text_lb.png");
+  $("#saveButton_background").attr("src", "./assets/icons/saveIcon_lb.png");
   $("#micButton_background").attr("src", "./assets/icons/micIcon_white.png");
   $("#drawButton_background").attr("src", "./assets/icons/pencilIcon_white.png");
 });
 
 $("#drawButton_Image").mouseover(function() {
-  $("#drawButton_background").attr("src", "./assets/drawButtonIcon_lb&white.png");
+  $("#drawButton_background").attr("src", "./assets/icons/pencilIcon_lb.png");
   $("#saveButton_background").attr("src", "./assets/icons/saveIcon_white.png");
   $("#micButton_background").attr("src", "./assets/icons/micIcon_white.png");
 });
 
 $("#micButton_Image").mouseover(function() {
-  $("#micButton_background").attr("src", "./assets/micButtonIcon_lb.png");
+  $("#micButton_background").attr("src", "./assets/icons/micIcon_lb.png");
   $("#saveButton_background").attr("src", "./assets/icons/saveIcon_white.png");
   $("#drawButton_background").attr("src", "./assets/icons/pencilIcon_white.png");
 });
@@ -144,7 +157,7 @@ function gotData() {
 
       let body = content.body;
       let num = body ? Math.min(body.length, 130) : 0;
-      //let bodyShort = content.body.substring(0, num);
+      let bodyShort = content.body.substring(0, num);
       let title = content.title;
       let tag = content.tag;
 
@@ -185,7 +198,7 @@ function gotData() {
                 }).text(dt_final)),
                 $('<p/>', {
                   'class': 'card-text bodyFont'
-                }).text(body).css("color", "#afafaf")
+                }).text(bodyShort).css("color", "#afafaf")
                 //}).text(bodyShort).css("color", "#afafaf")
               ])))))
     });
@@ -314,7 +327,8 @@ document.getElementById("searchButtonArchive").addEventListener("click", functio
 
       let dt = new Date(content.date);
       let dt_final = (dt.getMonth() + 1) + "/" + dt.getDate() + "/" + dt.getFullYear();
-      let body = content.body.replace(/^(.{130}[^\s]*).*/, "$1") // show only 130 letters
+      let body= content.body;
+      let bodyShort = content.body.replace(/^(.{130}[^\s]*).*/, "$1") // show only 130 letters
       let title = content.title;
       let tag = content.tag;
 
@@ -383,7 +397,8 @@ function tagClicked(selectedTag) {
 
         let dt = new Date(content.date);
         let dt_final = (dt.getMonth() + 1) + "/" + dt.getDate() + "/" + dt.getFullYear();
-        let body = content.body.replace(/^(.{130}[^\s]*).*/, "$1") // show only 130 letters
+        let body= content.body;
+        let bodyShort = content.body.replace(/^(.{130}[^\s]*).*/, "$1") // show only 130 letters
         let title = content.title;
         let tag = content.tag;
 
@@ -410,7 +425,7 @@ function tagClicked(selectedTag) {
                     $('<h4/>', {
                       'class': 'card-title titleFont'
                     }).append($('<a/>').text(title).attr("href", "#").click(function() {
-                      readDream(title, body, tag, dt_final);
+                      readDream(title, bodyShort, tag, dt_final);
                     })),
                     $('<blockquote/>', {
                       'class': 'blockquote'
@@ -419,7 +434,7 @@ function tagClicked(selectedTag) {
                     }).text(dt_final)),
                     $('<p/>', {
                       'class': 'card-text bodyFont'
-                    }).text(body).css("color", "#afafaf")
+                    }).text(bodyShort).css("color", "#afafaf")
                   ])))))
         }
       });

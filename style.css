@@ -22,6 +22,9 @@ body {
 }
 
 
+#login_page, #record_page, #archive_page, #read_page {
+  display: none;
+}
 
 .form-inline {
 justify-content: flex-end;
@@ -74,8 +77,18 @@ a {
 }
 
 
+
 .readDreamParentButtons, .poetryGeneratorParent {
   padding-top:7%;
+  width: 100%;
+  text-align: center;
+  color: white;
+
+}
+
+.presentationGalleryParent {
+  padding-top:7%;
+  padding-bottom:7%;
   width: 100%;
   text-align: center;
   color: white;
@@ -91,12 +104,39 @@ a {
   border-color: #e7c024;
   width: 33%;
   text-align: center;
-  font-size: 1.4em;
+  font-size: 1.2em;
   color:white;
+  display: flex;
+  flex-wrap: wrap;
 /*db5a04 #e7c024   #dd7937*/
 
 }
 
+.presentationGallery {
+  padding-top:2%;
+  margin-left: 200px;
+  margin-bottom: : 100px;
+  border-style: dotted;
+  border-width: 0.5px;
+  border-color: #e7c024;
+  width: 66%;
+  text-align: center;
+  font-size: 1.2em;
+  color:white;
+  display: flex;
+  flex-wrap: wrap;
+/*db5a04 #e7c024   #dd7937*/
+
+}
+
+
+
+
+
+
+.pronoun_word {
+  width: 15%
+}
 
 
 
@@ -158,7 +198,8 @@ top:100px;*/
 
 
 #galleryImageSection{
-  width : 70%;
+  width : 100%;
+  margin-left: 290px;
 }
 #gallerySearchSection{
 position:fixed;
@@ -175,7 +216,8 @@ margin-bottom: 3%;
 
 .thumbnail img {
     /*height:200px;*/
-    width:100%;
+    width:80%;
+
 }
 
 .custom-card {
@@ -280,6 +322,8 @@ border-radius: 1rem;
 #read_body {
   color : #fff;
   border : none;
+  font-size: 1.25em;
+
 }
 
 #read_tag {
